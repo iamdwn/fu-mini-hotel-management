@@ -3,15 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessObjects", "BusinessObjects\BusinessObjects.csproj", "{384E3D5E-A7E5-4BC4-9C28-5936FF3B2B30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessObjects", "BusinessObjects\BusinessObjects.csproj", "{384E3D5E-A7E5-4BC4-9C28-5936FF3B2B30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{2B7150F9-814A-4FD8-AD63-21CEAECE9908}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{2B7150F9-814A-4FD8-AD63-21CEAECE9908}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Repositories\Repositories.csproj", "{1D650E3A-325C-48CB-9A3E-ACA2A077DA11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories", "Repositories\Repositories.csproj", "{1D650E3A-325C-48CB-9A3E-ACA2A077DA11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{4CAEC882-01A2-42A2-BE20-34B0406F1B10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{4CAEC882-01A2-42A2-BE20-34B0406F1B10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFApp", "WPFApp\WPFApp.csproj", "{7B1C5F7D-E98D-4C5E-9B25-44C942F60AF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFApp", "WPFApp\WPFApp.csproj", "{7B1C5F7D-E98D-4C5E-9B25-44C942F60AF7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1D650E3A-325C-48CB-9A3E-ACA2A077DA11} = {1D650E3A-325C-48CB-9A3E-ACA2A077DA11}
+		{2B7150F9-814A-4FD8-AD63-21CEAECE9908} = {2B7150F9-814A-4FD8-AD63-21CEAECE9908}
+		{384E3D5E-A7E5-4BC4-9C28-5936FF3B2B30} = {384E3D5E-A7E5-4BC4-9C28-5936FF3B2B30}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

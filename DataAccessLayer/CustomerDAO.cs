@@ -1,74 +1,92 @@
 ﻿using BusinessObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using DataAccessLayer.DTO;
+using Microsoft.EntityFrameworkCore;
 
-namespace DataAccessLayer
+namespace DataAccessLayer;
+
+public class CustomerDAO
 {
-    internal class CustomerDAO
+    public static async Task<Customer?> GetCustomerById(int id)
     {
-        public static List<Customer> GetCustomers()
-        {
-            var listCustomers = new List<Customer>();
-            try
-            {
-                using var db = new FuminiHotelManagementContext();
-                listCustomers = db.Customers.ToList();
-            } catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            return listCustomers;
-        }
+        using var db = new FuminiHotelManagementContext();
+        return await db.Customers.FirstOrDefaultAsync(c => c.CustomerId.Equals(id));
+    }
 
-        public static void SaveCustomer(Customer c)
-        {
-            try
-            {
-                using var context = new FuminiHotelManagementContext();
-                context.Customers.Add(c);
-                context.SaveChanges();
-            } catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
+    public static async Task<Customer?> GetCustomerByEmail(string email)
+    {
+        using var db = new FuminiHotelManagementContext();
+        return await db.Customers.FirstOrDefaultAsync(c => c.EmailAddress.Equals(email));
+    }
 
-        public static void UpdateCustomer(Customer c)
-        {
-            try
+    public static List<CustomerDTO> GetCustomers(Func<Customer, bool> predicate)
+    {
+        using var db = new FuminiHotelManagementContext();
+        return db.Customers
+            .Where(predicate)
+            .Select(c=>new CustomerDTO
             {
-                using var context = new FuminiHotelManagementContext();
-                context.Entry<Customer>(c).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-                context.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
+                CustomerId = c.CustomerId,
+                CustomerFullName = c.CustomerFullName,
+                Telephone = c.Telephone,
+                EmailAddress = c.EmailAddress,
+                CustomerBirthday = c.CustomerBirthday,
+                CustomerStatus = c.CustomerStatus,
+                Password = c.Password,
+            })
+            .ToList();
+    }
 
-        public static void DeleteCustomer(Customer c)
-        {
-            try
-            {
-                using var context = new FuminiHotelManagementContext();
-                var c1 = context.Customers.SingleOrDefault(x => x.CustomerId == c.CustomerId);
-                context.Customers.Remove(c);
-                context.SaveChanges();
-            } catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
+    public static async Task<bool> UpdateCustomer(Customer customer)
+    {
+        using var db = new FuminiHotelManagementContext();
+        db.Customers.Update(customer);
+        var success = await db.SaveChangesAsync();
+        return success == 1 ? true : false;
+    }
 
-        public static Customer GetCustomerById(int id)
+    public static async Task UpdateCustomer(CustomerDTO customer)
+    {
+        using var db = new FuminiHotelManagementContext();
+        var existingCustomer = await db.Customers.FindAsync(customer.CustomerId);
+        if (existingCustomer != null)
         {
-            using var context = new FuminiHotelManagementContext();
-            return context.Customers.FirstOrDefault(x => x.CustomerId.Equals(id));
-        }
+            existingCustomer.CustomerFullName = customer.CustomerFullName;
+            existingCustomer.Telephone = customer.Telephone;
+            existingCustomer.EmailAddress = customer.EmailAddress;
+            existingCustomer.CustomerBirthday = customer.CustomerBirthday;
+            existingCustomer.CustomerStatus = customer.CustomerStatus;
+            existingCustomer.Password = customer.Password;
 
+            db.Customers.Update(existingCustomer);
+            await db.SaveChangesAsync();
+        }
+    }
+
+    public static async Task DeleteCustomer(int customerId)
+    {
+        using var db = new FuminiHotelManagementContext();
+        var customer = await db.Customers.FindAsync(customerId);
+        if (customer != null)
+        {
+            db.Customers.Remove(customer);
+            await db.SaveChangesAsync();
+        }
+    }
+
+    public static async Task AddCustomer(CustomerDTO customer)
+    {
+        using var db = new FuminiHotelManagementContext();
+        var newCustomer = new Customer
+        {
+            CustomerFullName = customer.CustomerFullName,
+            Telephone = customer.Telephone,
+            EmailAddress = customer.EmailAddress,
+            CustomerBirthday = customer.CustomerBirthday,
+            CustomerStatus = customer.CustomerStatus,
+            Password = customer.Password
+        };
+
+        db.Customers.Add(newCustomer);
+        await db.SaveChangesAsync();
     }
 }

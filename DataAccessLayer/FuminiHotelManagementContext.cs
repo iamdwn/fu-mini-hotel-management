@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using BusinessObjects;
+﻿using BusinessObjects;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-
 
 namespace DataAccessLayer;
 
@@ -33,7 +30,7 @@ public partial class FuminiHotelManagementContext : DbContext
         IConfiguration configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", true, true).Build();
-        return configuration["ConnectionStrings:DefaultConnectionString"];
+        return configuration["ConnectionStrings:DefaultConnectionStrings"];
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
