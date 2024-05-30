@@ -36,9 +36,9 @@
                 <Label Content="Password:" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10"/>
                 <PasswordBox x:Name="txtPassword" Grid.Row="2" Grid.Column="1" Margin="10" Width="200"/>
 
-                <Button Content="Login" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="1,19,0,0" Click="btnLogin_Click" Background="LightSkyBlue" Foreground="White" FontWeight="Bold" Grid.RowSpan="2" Height="26" Grid.Column="1"/>
+                <Button Content="Login" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="6,37,0,0" Click="btnLogin_Click" Background="LightSkyBlue" Foreground="White" FontWeight="Bold" Grid.RowSpan="2" Height="26" Grid.Column="1"/>
 
-                <Button Content="Cancel" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="127,19,0,0" Click="btnCancel_Click" Background="LightSkyBlue" Foreground="White" FontWeight="Bold" RenderTransformOrigin="0.523,-0.108" Grid.Column="1" Height="26"/>
+                <Button Content="Cancel" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="132,37,0,0" Click="btnCancel_Click" Background="LightSkyBlue" Foreground="White" FontWeight="Bold" RenderTransformOrigin="0.523,-0.108" Grid.Column="1" Height="26"/>
 
                 <TextBlock x:Name="ErrorMessage" Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Center" Foreground="Red" Margin="10" Visibility="Collapsed"/>
             </Grid>

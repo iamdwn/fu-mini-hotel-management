@@ -18,6 +18,7 @@ namespace WPFApp
         {
             InitializeComponent();
             _service = ((App)Application.Current).ServiceProvider.GetRequiredService<ICustomerService>() ?? throw new ArgumentNullException(nameof(CustomerService));
+            LoadData();
         }
 
         private void LoadData()
