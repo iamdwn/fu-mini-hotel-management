@@ -7,7 +7,13 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="600">
     <Grid>
-        <DataGrid x:Name="dgBookingHistory" AutoGenerateColumns="False" IsReadOnly="True" CanUserResizeColumns="False" CanUserReorderColumns="False" SelectionMode="Single" CanUserAddRows="False" CanUserDeleteRows="False" Margin="10,21,10,21">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <DataGrid x:Name="dgBookingHistory" AutoGenerateColumns="False" Grid.Row="1" IsReadOnly="True" CanUserResizeColumns="False" CanUserReorderColumns="False" SelectionMode="Single" CanUserAddRows="False" CanUserDeleteRows="False" Margin="10,21,10,21">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="BookingReservationId" Binding="{Binding BookingReservationId}"  Width="SizeToHeader"/>
                 <DataGridTextColumn Header="RoomId" Binding="{Binding RoomId}"  Width="SizeToHeader"/>
@@ -19,5 +25,11 @@
                 <DataGridTextColumn Header="TotalPrice" Binding="{Binding TotalPrice}" Width="SizeToHeader" />
             </DataGrid.Columns>
         </DataGrid>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10" Grid.Row="2">
+            <Button Content="Add" Click="btnAdd_Click" Margin="5"/>
+            <Button Content="Edit" Click="btnEdit_Click" Margin="5"/>
+            <Button Content="Delete" Click="btnDelete_Click" Margin="5"/>
+        </StackPanel>
     </Grid>
 </UserControl>

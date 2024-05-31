@@ -12,15 +12,13 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-
-        <!-- Search Bar -->
+        
         <StackPanel Orientation="Horizontal" Margin="10">
             <Label>Search by Room Number...</Label>
             <TextBox x:Name="txtSearch" Width="200"/>
             <Button Content="Search" Click="btnSearch_Click" Margin="5,0,0,0"/>
         </StackPanel>
 
-        <!-- Data Grid for Room List -->
         <DataGrid x:Name="dgRooms" AutoGenerateColumns="False" CanUserAddRows="False" Grid.Row="1" Margin="10" SelectionMode="Single" SelectionChanged="dgRooms_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Room ID" Binding="{Binding RoomId}" Width="SizeToHeader"/>
@@ -33,7 +31,6 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <!-- CRUD Buttons -->
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10" Grid.Row="2">
             <Button Content="Add" Click="btnAdd_Click" Margin="5"/>
             <Button Content="Edit" Click="btnEdit_Click" Margin="5"/>

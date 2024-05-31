@@ -28,5 +28,41 @@ namespace WPFApp
 
             dgBookingHistory.ItemsSource = bookingDetails;
         }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            AddEditBookingDialog addEditBookingDialog = new AddEditBookingDialog();
+            addEditBookingDialog.Customer = Customer;
+            if (addEditBookingDialog.ShowDialog() == true)
+            {
+                LoadData(sender, e);
+            }
+        }
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            AddEditBookingDialog addEditBookingDialog = new AddEditBookingDialog();
+            addEditBookingDialog.Customer = Customer;
+            //addEditBookingDialog.Booking = 
+            if (addEditBookingDialog.ShowDialog() == true)
+            {
+                LoadData(sender, e);
+            }
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            if (dgBookingHistory.SelectedItem is BookingHistoryDTO selectedBooking)
+            {
+                if (MessageBox.Show($"Are you sure you want to delete Customer {selectedBooking.BookingReservationId}?", "Confirm Delete", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                {
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a booking to delete.", "Delete Booking", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
     }
 }
+    
