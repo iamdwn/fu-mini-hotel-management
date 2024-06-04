@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" Height="384" Width="360">
+             mc:Ignorable="d"
+             d:DesignHeight="384" d:DesignWidth="360">
     <UserControl.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
             <GradientStop Color="LightBlue" Offset="0.0"/>
@@ -52,9 +53,8 @@
 
         <Label Content="Birthday:"/>
         <DatePicker x:Name="dpBirthday" Margin="0,0,0,10"/>
-        <Button Width="150" Click="btnUpdate_Click">
+        <Button Width="116" Click="btnUpdate_Click" Height="30">
             <StackPanel Orientation="Horizontal">
-
                 <TextBlock Text="Update Profile" VerticalAlignment="Center"/>
             </StackPanel>
         </Button>

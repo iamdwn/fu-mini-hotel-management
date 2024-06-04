@@ -49,9 +49,13 @@ namespace WPFApp
             }
             else
             {
-                // Show a message indicating that all fields are required
                 MessageBox.Show("All fields are required.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

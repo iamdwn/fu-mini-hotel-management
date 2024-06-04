@@ -11,23 +11,16 @@ namespace WPFApp
         {
             InitializeComponent();
         }
+
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Are you sure you want to log out?", "Logout", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                this.Hide();
+                LoginWindow loginWindow = new LoginWindow();
+                loginWindow.Show();
+            }
+        }
     }
-
-    //private void AddRoom_Button(object sender, RoutedEventArgs e)
-    //{
-
-    //}
-
-    //private void btnLogout(object sender, RoutedEventArgs e)
-    //{
-    //    MessageBoxResult result = MessageBox.Show("Do you want to proceed?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
-
-    //    if (result == MessageBoxResult.Yes)
-    //    {
-    //        MainWindow mainWindow = new MainWindow();
-    //        mainWindow.Show();
-    //        this.Hide();
-    //    }
-
-    //}
 }

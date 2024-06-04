@@ -12,40 +12,30 @@
             <GradientStop Color="LightSkyBlue" Offset="1.0"/>
         </LinearGradientBrush>
     </Window.Background>
-    <Window.Resources>
-        <Style TargetType="TabControl">
-            <Setter Property="Margin" Value="10"/>
-            <Setter Property="Padding" Value="5"/>
-        </Style>
-
-        <Style TargetType="TabItem">
-            <Setter Property="FontFamily" Value="Segoe UI"/>
-            <Setter Property="FontSize" Value="14"/>
-            <Setter Property="Padding" Value="10,5"/>
-            <Setter Property="Margin" Value="2"/>
-        </Style>
-
-        <Style TargetType="Grid">
-            <Setter Property="Margin" Value="10"/>
-        </Style>
-    </Window.Resources>
-
+    <StackPanel>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="334*"/>
+            <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="184*"/>
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
-        <TabControl Margin="9,10,10,4" Grid.Column="1">
-            <TabItem Header="Profile">
+        <TabControl Margin="9,42,1,4" Grid.Column="1">
+                <TabItem Header="Profile" HorizontalAlignment="Right" Margin="0,-2,-2,0" Width="123">
                 <local:ProfileManagement x:Name="profileManagement"/>
             </TabItem>
             <TabItem Header="Booking History" HorizontalAlignment="Right" Margin="0,-2,-2,0" Width="123">
                 <local:BookingHistory x:Name="bookingHistory"/>
             </TabItem>
         </TabControl>
+        <Button Click="btnLogout_Click" Grid.ColumnSpan="2" Margin="510,10,88,579">
+            <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Logout"/>
+                </StackPanel>
+        </Button>
     </Grid>
+    </StackPanel>
 </Window>
