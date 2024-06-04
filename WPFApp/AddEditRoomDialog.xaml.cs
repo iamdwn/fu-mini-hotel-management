@@ -18,8 +18,7 @@ namespace WPFApp
                 Room = room;
                 txtRoomNumber.Text = room.RoomNumber;
                 txtDescription.Text = room.RoomDetailDescription;
-                txtMaxCapacity.Text = room.RoomMaxCapacity.ToString();
-                txtStatus.Text = room.RoomStatus.ToString();
+                txtMaxCapacity.Text = room.RoomMaxCapacity.ToString();;
                 txtPrice.Text = room.RoomPricePerDay.ToString();
                 txtType.Text = room.RoomType;
             }
@@ -34,7 +33,6 @@ namespace WPFApp
             if (!string.IsNullOrEmpty(txtRoomNumber.Text) &&
                 !string.IsNullOrEmpty(txtDescription.Text) &&
                 !string.IsNullOrEmpty(txtMaxCapacity.Text) &&
-                !string.IsNullOrEmpty(txtStatus.Text) &&
                 !string.IsNullOrEmpty(txtPrice.Text) &&
                 !string.IsNullOrEmpty(txtType.Text))
             {
@@ -42,7 +40,7 @@ namespace WPFApp
                 Room.RoomNumber = txtRoomNumber.Text;
                 Room.RoomDetailDescription = txtDescription.Text;
                 Room.RoomMaxCapacity = int.Parse(txtMaxCapacity.Text);
-                Room.RoomStatus = byte.Parse(txtStatus.Text);
+                Room.RoomStatus = 1;
                 Room.RoomPricePerDay = decimal.Parse(txtPrice.Text);
                 Room.RoomType = txtType.Text;
 

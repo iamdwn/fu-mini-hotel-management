@@ -16,8 +16,7 @@
             <TextBox x:Name="txtEmail" Width="450" HorizontalAlignment="Left"/>
             <Label Content="Birthday:"/>
             <DatePicker x:Name="dpBirthday" Width="450" HorizontalAlignment="Left"/>
-            <Label Content="Status:"/>
-            <TextBox x:Name="txtStatus" Width="450" HorizontalAlignment="Left"/>
+            <Label Content=""/>
             <Label Content="Password:"/>
             <TextBox x:Name="txtPassword" Width="450" HorizontalAlignment="Left"/>
             <Button Content="Save" Width="100" Click="btnSave_Click" Margin="0,10,0,0"/>

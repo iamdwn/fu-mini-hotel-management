@@ -8,11 +8,11 @@
              d:DesignHeight="450" d:DesignWidth="600">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="23*"/>
+            <RowDefinition Height="177*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        
+
         <StackPanel Orientation="Horizontal" Margin="10">
             <Label>Search by Room Number...</Label>
             <TextBox x:Name="txtSearch" Width="200"/>

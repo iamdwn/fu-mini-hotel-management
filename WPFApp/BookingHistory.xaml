@@ -28,7 +28,6 @@
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10" Grid.Row="2">
             <Button Content="Add" Click="btnAdd_Click" Margin="5"/>
-            <Button Content="Edit" Click="btnEdit_Click" Margin="5"/>
             <Button Content="Delete" Click="btnDelete_Click" Margin="5"/>
         </StackPanel>
     </Grid>

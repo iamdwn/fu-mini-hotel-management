@@ -77,7 +77,6 @@ namespace WPFApp
                     EndDate = dpEndDate.SelectedDate.Value,
                     ActualPrice = TotalPrice,
                 };
-
                 bookingDetailsDTOs.Add(bookingDetail);
                 LoadBookingDetails(sender, e);
             }

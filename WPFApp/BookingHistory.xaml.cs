@@ -50,12 +50,14 @@ namespace WPFApp
             }
         }
 
-        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        private async void btnDelete_Click(object sender, RoutedEventArgs e)
         {
             if (dgBookingHistory.SelectedItem is BookingHistoryDTO selectedBooking)
             {
                 if (MessageBox.Show($"Are you sure you want to delete Customer {selectedBooking.BookingReservationId}?", "Confirm Delete", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
                 {
+                    await _service.UpdateBooking(selectedBooking);
+                    LoadData(sender, e);
                 }
             }
             else

@@ -5,7 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFApp"
         mc:Ignorable="d"
-        Title="MiniHotel Management" Height="450" Width="650">
+        Title="MiniHotel Management" Height="450" Width="650"
+        Background="LightGray">
+    <Window.Resources>
+        <Style TargetType="TabControl">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+
+        <Style TargetType="TabItem">
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Margin" Value="2"/>
+        </Style>
+
+        <Style TargetType="Grid">
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <TabControl>
             <TabItem Header="Profile">

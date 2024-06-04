@@ -84,7 +84,8 @@ namespace WPFApp
             {
                 if (MessageBox.Show($"Are you sure you want to delete Customer {selectedCustomer.CustomerFullName}?", "Confirm Delete", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
                 {
-                    await _service.DeleteCustomer(selectedCustomer.CustomerId);
+                    selectedCustomer.CustomerStatus = 0;
+                    await _service.UpdateCustomer(selectedCustomer);
                     LoadData();
                 }
             }

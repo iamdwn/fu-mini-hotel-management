@@ -89,7 +89,8 @@ namespace WPFApp
             {
                 if (MessageBox.Show($"Are you sure you want to delete Room {selectedRoom.RoomNumber}?", "Confirm Delete", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
                 {
-                    await _service.DeleteRoom(selectedRoom.RoomId);
+                    selectedRoom.RoomStatus = 0;
+                    await _service.UpdateRoom(selectedRoom);
                     LoadData();
                 }
             }

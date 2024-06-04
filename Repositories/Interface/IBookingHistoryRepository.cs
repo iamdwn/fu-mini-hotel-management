@@ -9,5 +9,7 @@ namespace Repositories.Interface
         Task<BookingReservation?> GetBookingById(int id);
         Task<List<BookingHistoryDTO>> GetBookingByCusId(int id);
         BookingReservation CreateBooking(BookingDTO booking);
+        Task UpdateBooking(BookingHistoryDTO booking);
+        Task UpdateBooking(BookingReservation booking);
     }
 }

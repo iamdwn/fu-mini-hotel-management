@@ -20,7 +20,8 @@ public class BookingHistoryDAO
             .Include(bd => bd.BookingReservation)
                 .ThenInclude(br => br.Customer)
             .Include(bd => bd.Room)
-            .Where(bd => bd.BookingReservation.CustomerId == id)
+            .Where(bd => bd.BookingReservation.CustomerId == id
+            && bd.BookingReservation.BookingStatus == 1)
             .Select(bd => new BookingHistoryDTO
             {
                 BookingReservationId = bd.BookingReservationId,
@@ -43,7 +44,7 @@ public class BookingHistoryDAO
 
         var bookingReservation = new BookingReservation
         {
-            BookingReservationId = db.BookingReservations.Count(),
+            BookingReservationId = db.BookingReservations.Count() + 1,
             BookingDate = DateOnly.FromDateTime((DateTime)bookingDto.BookingDate),
             CustomerId = bookingDto.CustomerId,
             BookingStatus = bookingDto.BookingStatus,
@@ -93,5 +94,23 @@ public class BookingHistoryDAO
             .Select(b => new BookingDTO
             {
             }).FirstOrDefault();
+    }
+
+    public static async Task UpdateBooking(BookingHistoryDTO bookingDTO)
+    {
+        using var db = new FuminiHotelManagementContext();
+        var bookingReservation = db.BookingReservations
+            .Where(b => bookingDTO.BookingReservationId == b.BookingReservationId).FirstOrDefault();
+        bookingReservation.BookingStatus = 0;
+        db.BookingReservations.Update(bookingReservation);
+        await db.SaveChangesAsync();
+    }
+
+    public static async Task UpdateBooking(BookingReservation booking)
+    {
+        using var db = new FuminiHotelManagementContext();
+        booking.BookingStatus = 0;
+        db.BookingReservations.Update(booking);
+        await db.SaveChangesAsync();
     }
 }

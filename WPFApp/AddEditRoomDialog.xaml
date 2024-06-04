@@ -14,8 +14,6 @@
             <TextBox x:Name="txtDescription" Width="450" HorizontalAlignment="Left"/>
             <Label Content="Max Capacity:"/>
             <TextBox x:Name="txtMaxCapacity" Width="450" HorizontalAlignment="Left"/>
-            <Label Content="Status:"/>
-            <TextBox x:Name="txtStatus" Width="450" HorizontalAlignment="Left"/>
             <Label Content="Price Per Day:"/>
             <TextBox x:Name="txtPrice" Width="450" HorizontalAlignment="Left"/>
             <Label Content="Type:"/>

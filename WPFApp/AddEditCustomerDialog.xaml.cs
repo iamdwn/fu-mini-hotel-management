@@ -20,7 +20,6 @@ namespace WPFApp
                 txtTelephone.Text = customer.Telephone;
                 txtEmail.Text = customer.EmailAddress;
                 dpBirthday.SelectedDate = customer.CustomerBirthday;
-                txtStatus.Text = customer.CustomerStatus.ToString();
                 txtPassword.Text = customer.Password;
             }
             else
@@ -35,7 +34,6 @@ namespace WPFApp
                 !string.IsNullOrEmpty(txtTelephone.Text) &&
                 !string.IsNullOrEmpty(txtEmail.Text) &&
                 dpBirthday.SelectedDate != null &&
-                !string.IsNullOrEmpty(txtStatus.Text) &&
                 !string.IsNullOrEmpty(txtPassword.Text))
             {
                 // All fields are filled, proceed with assigning values
@@ -43,7 +41,7 @@ namespace WPFApp
                 Customer.Telephone = txtTelephone.Text;
                 Customer.EmailAddress = txtEmail.Text;
                 Customer.CustomerBirthday = dpBirthday.SelectedDate;
-                Customer.CustomerStatus = byte.Parse(txtStatus.Text);
+                Customer.CustomerStatus = 1;
                 Customer.Password = txtPassword.Text;
 
                 DialogResult = true;
