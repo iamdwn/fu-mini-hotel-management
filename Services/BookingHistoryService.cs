@@ -21,6 +21,11 @@ namespace Services
         public async Task<List<BookingHistoryDTO>> GetBookingByCusId(int id) => await _repo.GetBookingByCusId(id);
 
         public BookingReservation CreateBooking(BookingDTO booking) => _repo.CreateBooking(booking);
+
         public async Task UpdateBooking(BookingHistoryDTO booking) => await _repo.UpdateBooking(booking);
+
+        public int CountBookings() => _repo.CountBookings();
+
+        public decimal? CalcRevenue() => _repo.CalcRevenue();
     }
 }

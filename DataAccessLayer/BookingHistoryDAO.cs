@@ -38,6 +38,22 @@ public class BookingHistoryDAO
             .ToListAsync();
     }
 
+    public static int CountBookings()
+    {
+        using var db = new FuminiHotelManagementContext();
+        return db.BookingReservations
+            .Where(b => b.BookingStatus == 1)
+            .Count();
+    }
+
+    public static decimal? CalcRevenue()
+    {
+        using var db = new FuminiHotelManagementContext();
+        return db.BookingReservations
+            .Where(b => b.BookingStatus == 1)
+            .Sum(b => b.TotalPrice);
+    }
+
     public static BookingReservation CreateBooking(BookingDTO bookingDto)
     {
         using var db = new FuminiHotelManagementContext();

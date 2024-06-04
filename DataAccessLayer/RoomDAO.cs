@@ -25,6 +25,14 @@ public class RoomDAO
                         .ToList();
     }
 
+    public static int CountRooms()
+    {
+        using var db = new FuminiHotelManagementContext();
+        return db.RoomInformations
+             .Where(r => r.RoomStatus == 1)
+             .Count();
+    }
+
     public static async Task AddRoom(RoomDTO room)
     {
         using var db = new FuminiHotelManagementContext();

@@ -20,5 +20,7 @@ namespace Repositories
         public async Task<bool> UpdateCustomer(Customer customer) => await CustomerDAO.UpdateCustomer(customer);
 
         public async Task UpdateCustomer(CustomerDTO customer) => await CustomerDAO.UpdateCustomer(customer);
+
+        public int CountCustomers() => CustomerDAO.CountCustomers();
     }
 }

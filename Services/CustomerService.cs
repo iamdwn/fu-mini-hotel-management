@@ -40,5 +40,7 @@ namespace Services
         public async Task UpdateCustomer(CustomerDTO customer) => await _repo.UpdateCustomer(customer);
 
         public async Task<bool> UpdateProfile(Customer customer) => await _repo.UpdateCustomer(customer);
+
+        public int CountCustomers() => _repo.CountCustomers();
     }
 }

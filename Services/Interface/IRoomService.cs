@@ -9,5 +9,6 @@ namespace Services.Interface
         Task AddRoom(RoomDTO room);
         Task UpdateRoom(RoomDTO room);
         Task DeleteRoom(int roomId);
+        int CountRooms();
     }
 }

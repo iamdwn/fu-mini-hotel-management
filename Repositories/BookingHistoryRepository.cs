@@ -17,5 +17,9 @@ namespace Repositories
         public async Task UpdateBooking(BookingHistoryDTO booking) => await BookingHistoryDAO.UpdateBooking(booking);
 
         public async Task UpdateBooking(BookingReservation booking) => await BookingHistoryDAO.UpdateBooking(booking);
+
+        public int CountBookings() => BookingHistoryDAO.CountBookings();
+
+        public decimal? CalcRevenue() => BookingHistoryDAO.CalcRevenue();
     }
 }

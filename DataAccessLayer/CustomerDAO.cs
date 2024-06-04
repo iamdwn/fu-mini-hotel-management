@@ -23,7 +23,7 @@ public class CustomerDAO
         using var db = new FuminiHotelManagementContext();
         return db.Customers
             .Where(predicate)
-            .Select(c=>new CustomerDTO
+            .Select(c => new CustomerDTO
             {
                 CustomerId = c.CustomerId,
                 CustomerFullName = c.CustomerFullName,
@@ -34,6 +34,14 @@ public class CustomerDAO
                 Password = c.Password,
             })
             .ToList();
+    }
+
+    public static int CountCustomers()
+    {
+        using var db = new FuminiHotelManagementContext();
+        return db.Customers
+            .Where(c => c.CustomerStatus == 1)
+            .Count();
     }
 
     public static async Task<bool> UpdateCustomer(Customer customer)

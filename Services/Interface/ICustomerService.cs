@@ -13,5 +13,6 @@ namespace Services.Interface
         Task DeleteCustomer(int id);
         Task UpdateCustomer(CustomerDTO customer);
         List<CustomerDTO> GetCustomers(Func<Customer, bool> predicate);
+        int CountCustomers();
     }
 }

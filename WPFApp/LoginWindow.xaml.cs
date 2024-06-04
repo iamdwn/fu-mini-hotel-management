@@ -24,7 +24,7 @@ namespace WPFApp
             {
                 if (IsAdmin(txtEmail.Text, txtPassword.Password))
                 {
-                    MessageBox.Show("Login admin successful!");
+                    MessageBox.Show("Login Successful !! \nYou are Admin");
 
                     AdminWindow adminWindow = new AdminWindow();
                     adminWindow.Show();
@@ -37,7 +37,7 @@ namespace WPFApp
 
                     if (customer != null)
                     {
-                        MessageBox.Show("Login successful!");
+                        MessageBox.Show("Login Successful !!");
 
                         MainWindow mainWindow = new MainWindow();
                         mainWindow.customer = customer;
@@ -59,7 +59,11 @@ namespace WPFApp
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            MessageBoxResult result = MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                Application.Current.Shutdown();
+            }
         }
 
         private bool IsAdmin(string email, string password)
@@ -72,10 +76,5 @@ namespace WPFApp
             return email.Equals(config["AdminAccount:Email"])
                 && password.Equals(config["AdminAccount:Password"]);
         }
-
-        //private bool IsAdmin(string email, string password)
-        //{
-        //    return email.Equals("admin@FUMiniHotelSystem.com") && password.Equals("@@abc123@@");
-        //}
     }
 }

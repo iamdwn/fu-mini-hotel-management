@@ -11,5 +11,7 @@ namespace Repositories.Interface
         BookingReservation CreateBooking(BookingDTO booking);
         Task UpdateBooking(BookingHistoryDTO booking);
         Task UpdateBooking(BookingReservation booking);
+        int CountBookings();
+        decimal? CalcRevenue();
     }
 }

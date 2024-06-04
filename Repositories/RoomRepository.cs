@@ -14,5 +14,7 @@ namespace Repositories
         public List<RoomDTO> GetRooms(Func<RoomInformation, bool> predicate) => RoomDAO.GetRooms(predicate);
 
         public async Task UpdateRoom(RoomDTO room) => await RoomDAO.UpdateRoom(room);
+
+        public int CountRooms() => RoomDAO.CountRooms();
     }
 }

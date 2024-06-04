@@ -16,7 +16,7 @@ namespace WPFApp
         public RoomManagement()
         {
             InitializeComponent();
-            _service = ((App)Application.Current).ServiceProvider.GetRequiredService<IRoomService>() ?? throw new ArgumentNullException(nameof(CustomerService));
+            _service = ((App)Application.Current).ServiceProvider.GetRequiredService<IRoomService>() ?? throw new ArgumentNullException(nameof(RoomService));
             LoadData();
         }
 

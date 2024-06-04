@@ -10,5 +10,7 @@ namespace Services.Interface
         Task<List<BookingHistoryDTO>> GetBookingByCusId(int id);
         BookingReservation CreateBooking(BookingDTO booking);
         Task UpdateBooking(BookingHistoryDTO booking);
+        int CountBookings();
+        decimal? CalcRevenue();
     }
 }

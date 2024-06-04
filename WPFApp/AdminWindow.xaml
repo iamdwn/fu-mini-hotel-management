@@ -21,6 +21,9 @@
                 <TabItem Header="Room Management" HorizontalAlignment="Right" Margin="0,-2,-2,0" Width="123">
                     <local:RoomManagement />
                 </TabItem>
+                <TabItem Header="Report Statistics">
+                    <local:ReportStatistics x:Name="reportStatistics"/>
+                </TabItem>
             </TabControl>
             <Button Click="btnLogout_Click" Margin="526,1,72,588">
                 <StackPanel Orientation="Horizontal">

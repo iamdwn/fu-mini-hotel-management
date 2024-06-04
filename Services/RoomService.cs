@@ -22,5 +22,7 @@ namespace Services
         public List<RoomDTO> GetRooms(Func<RoomInformation, bool> predicate) => _repo.GetRooms(predicate);
 
         public async Task UpdateRoom(RoomDTO room) => await _repo.UpdateRoom(room);
+
+        public int CountRooms() => _repo.CountRooms();
     }
 }
