@@ -7,8 +7,13 @@
         mc:Ignorable="d"
         Title="AddEditBookingDialog" Height="580
         " Width="962"
-        ResizeMode="NoResize"
-        Background="LightSkyBlue">
+        ResizeMode="NoResize">
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="LightBlue" Offset="0.0"/>
+            <GradientStop Color="LightSkyBlue" Offset="1.0"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

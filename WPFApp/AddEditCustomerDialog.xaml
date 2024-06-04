@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFApp"
         mc:Ignorable="d"
-        Title="AddEditCustomerDialog" Height="450" Width="500"
-        Background="LightSkyBlue">
+        Title="AddEditCustomerDialog" Height="355" Width="302">
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="LightBlue" Offset="0.0"/>
+            <GradientStop Color="LightSkyBlue" Offset="1.0"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid Margin="10">
         <StackPanel>
             <Label Content="Full Name:"/>

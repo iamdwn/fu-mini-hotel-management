@@ -5,8 +5,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPFApp"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
-             Background="LightSkyBlue">
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="LightBlue" Offset="0.0"/>
+            <GradientStop Color="LightSkyBlue" Offset="1.0"/>
+        </LinearGradientBrush>
+    </UserControl.Background>
     <UserControl.Resources>
         
         <Style TargetType="StackPanel">

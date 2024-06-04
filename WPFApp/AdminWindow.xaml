@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFApp"
         mc:Ignorable="d"
-        Title="AdminWindow" Height="450" Width="800"
-        Background="LightSkyBlue">
+        Title="AdminWindow" Height="450" Width="800">
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="LightBlue" Offset="0.0"/>
+            <GradientStop Color="LightSkyBlue" Offset="1.0"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
         <TabControl>
             <TabItem Header="Customer Management">
