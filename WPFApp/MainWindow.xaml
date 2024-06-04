@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFApp"
         mc:Ignorable="d"
-        Title="MiniHotel Management" Height="450" Width="650"
-        Background="LightGray">
+        Title="MiniHotel Management" Height="662" Width="678"
+        Background="LightSkyBlue">
     <Window.Resources>
         <Style TargetType="TabControl">
             <Setter Property="Margin" Value="10"/>
@@ -26,11 +26,19 @@
     </Window.Resources>
 
     <Grid>
-        <TabControl>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="184*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <TabControl Margin="9,10,10,4" Grid.Column="1">
             <TabItem Header="Profile">
                 <local:ProfileManagement x:Name="profileManagement"/>
             </TabItem>
-            <TabItem Header="Booking History">
+            <TabItem Header="Booking History" HorizontalAlignment="Right" Margin="0,-2,-2,0" Width="123">
                 <local:BookingHistory x:Name="bookingHistory"/>
             </TabItem>
         </TabControl>

@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFApp"
         mc:Ignorable="d"
-        Title="AddEditRoomDialog" Height="450" Width="500">
+        Title="AddEditRoomDialog" Height="450" Width="500"
+        Background="LightSkyBlue">
     <Grid Margin="10">
         <StackPanel>
             <Label Content="Room Number:"/>

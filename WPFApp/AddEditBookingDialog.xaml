@@ -8,7 +8,7 @@
         Title="AddEditBookingDialog" Height="580
         " Width="962"
         ResizeMode="NoResize"
-        >
+        Background="LightSkyBlue">
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
