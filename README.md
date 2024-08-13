@@ -19,5 +19,5 @@ FUMiniHotelSystem is a lightweight hotel management system developed using Windo
 To run this project locally, follow step:
 
    ```bash
-   git clone https://github.com/iamdwn/PRN221-FUMiniHotelManagement.git
+   git clone https://github.com/iamdwn/FUMiniHotelManagement.git
 
